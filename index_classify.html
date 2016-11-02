@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>些事,些情</title>
+
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <link href="fonts/iconfont.css" rel="stylesheet"/>
+    
+    <style type="text/css">
+    	/*-----General reset：限制最大宽度-------*/
+    	header,nav,.mui-content,.mui-iframe-wrapper{
+    		max-width: 720px;
+    		margin: 0 auto;
+    	}
+    	/*------其他部分通用样式--------*/
+    	header{
+    		position: relative;
+    	}
+    	
+    	/*底部导航样式*/
+    	nav>a{
+    		color: #929292;
+    		box-sizing: border-box;
+    		background-color: #343434;
+    		
+    	}
+    	/*背景色重置*/
+    	nav>a.mui-active{
+    		background-color: black;
+    		border-bottom: 4px solid red;
+    	}
+    	/*激发态颜色重置*/
+    	nav>a.mui-active>span{
+    		color: white;
+    	}
+    	/*---------------------------*/
+    	
+    	/*主页面Logo*/
+    	#logo{
+    		position: absolute;
+    		top:15%;
+    		left: 2.5%;
+		   	width: 32px;
+		    border-radius: 50%;
+		    overflow: hidden;		    
+    	}
+    	/*img-width:100%可以考虑放到通用样式reset中去*/
+    	#logo img{
+    		width: 100%;
+    	}
+    	
+    	/* 返回键样式重置  */
+    	.mui-bar .mui-action-back {
+    		position: absolute;
+    	}
+    	
+    	/*搜索条*/
+    	.mui-search{
+		    width: 75%;
+    		margin: 2px auto 0 12%;
+    	}
+    	
+    </style>
+    
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+      	<a class="mui-icon mui-action-menu mui-icon-bars mui-pull-right"  href="#offCanvasSide" ></a>
+      	<div class="mui-input-row mui-search">
+		    <input type="search" class="mui-input-clear" placeholder="输入你想要找的宝贝……">
+		</div>	
+    </header>
+    <!--底部导航栏-->
+	<nav class="mui-bar mui-bar-tab">
+		<a class="mui-tab-item" href="#tabbar">
+			<span class="mui-icon iconfont">&#xe602;</span>
+			<span class="mui-tab-label">首页</span>
+		</a>
+		<a class="mui-tab-item mui-active" href="#tabbar-with-chat">
+			<!--<span class="mui-badge">9</span>可以显示小红点数字提示-->
+			<span class="mui-icon iconfont">&#xe603;</span>
+			<span class="mui-tab-label">分类</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-contact">
+			<span class="mui-icon iconfont">&#xe601;<span class="mui-badge" id="shopNum">0</span></span>
+			<span class="mui-tab-label">购物车</span>
+		</a>
+		<a class="mui-tab-item" href="#tabbar-with-map">
+			<span class="mui-icon iconfont">&#xe600;</span>
+			<span class="mui-tab-label">我</span>
+		</a>
+	</nav>
+</body>
+<script src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+// ========================================================================
+//初始化内嵌页面
+mui.init({
+	subpages: [{
+	    url: 'list_classify.html',
+	    id: 'list_classify.html',
+	    styles: {
+	        top: '44px', //mui标题栏默认高度为45px；
+	        bottom: '10px' //默认为0px，可不定义；
+	        }
+	    }]
+});
+
+// 取消侧滑效果.
+// ========================================================================
+// 跳转操作
+var urls = ["index.html", "index_classify.html", "index_shoppingcar.html","register_js.html"]
+$("nav>a").on("tap", function() {
+    // 判断当前页面是否为按下的按钮所指向的页面,是就不跳转.
+    if(window.location.href.indexOf(urls[$(this).index()])>-1){
+        return;
+    }else{
+        openWindowFn(urls[$(this).index()]);
+    }
+});
+
+function openWindowFn(newurl) {
+    mui.openWindow({
+        url: newurl,
+        id: newurl,
+        styles: {
+            top: "0px", //新页面顶部位置
+            bottom: "0px" //新页面底部位置
+        },
+        createNew: false, //是否重复创建同样id的webview，默认为false:不重复创建，直接显示
+    });
+}
+
+// ========================================================================
+// 购物车商品数量小图标同步(需要在有框架的页面中设置)
+function shopcarNumFn(){
+    // 如果localStorage.getItem("shopNum")还没有值,就取0;
+    var num = localStorage.getItem("shopNum") || "0";
+    $("#shopNum").html(num);
+}
+shopcarNumFn();
+
+</script>
+</html>

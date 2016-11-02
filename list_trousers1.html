@@ -1,0 +1,350 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="css/mui.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/Reset.css">
+    <style type="text/css">
+	    .mui-content {
+	        background: white;
+	        padding-bottom: 10px;
+	    }
+	    .ocontent img {
+	        width: 100%;
+	    }
+	    .ocontent {
+	        width: 92%;
+	        margin: 0 auto;
+	    }
+	    .otop section {
+	        font-size: 18px;
+	        color: gray;
+	        margin: 6px 0;
+	    }
+	    .otop p {
+	        margin: 5px 0;
+	        font-size: 18px;
+	    }
+	    .otop span {
+	        color: red;
+	        display: inline-block;
+	        font-size: 22px;
+	        padding: 10px 0;
+	    }
+	    .otop .ocolor {
+	    	border-top: 1px solid gainsboro;
+	    	padding: 10px 0;
+	    }
+	    .otop .ocolor span{
+	    	width: 30px;
+	    	height: 30px;
+	    	border: 1px solid gainsboro;
+	    	margin-right: 10px;
+	    	background: gray;
+	    }
+	    .otop .osize {
+	    	border-top: 1px solid gainsboro;
+	    	padding: 10px 0;
+	    }
+	    .otop .osize span{
+	    	width: 40px;
+	    	border: 1px solid gainsboro;
+	    	margin-right: 10px;
+	    	padding: 5px 0;
+	    	text-align: center;
+	    	color: gray;
+	    	font-size: 13px;
+	    }
+	    .ocontent .otop .active {
+	    	border-color: black;
+	    }
+	    .obody {
+	        width: 100%;
+	    }
+	    .obody section {
+	        width: 100%;
+	        /*清浮动*/
+	        overflow: hidden;
+	        border-bottom: 1px solid gainsboro;
+	        border-top: 1px solid gainsboro;
+	        padding: 3% 0;
+	    }
+	    .obody .oleft {
+	        float: left;
+	        width: 50%;
+	    }
+	    .obody .oleft .mui-btn-warning {
+	        margin-top: 10%;
+	        margin-left: 25%;
+	    }
+	    .obody .olis {
+	        width: 100%;
+	        overflow: hidden;
+	        list-style: none;
+	        padding: 0;
+	    }
+	    .obody .olis li {
+	        float: left;
+	        width: 33%;
+	        color: grey;
+	        text-align: center;
+	    }
+	    .obody .olis li:nth-of-type(2) {
+	        border-left: 1px solid gainsboro;
+	        border-right: 1px solid gainsboro;
+	    }
+	    .obody h4,.obody h5 {
+	        text-align: center;
+	        padding: 1% 0;
+	    }
+	    .obody p {
+	        width: 100%;
+	    }
+	    table {
+	    	width: 100%;
+	    	margin-top: 10px;
+	    	text-align: center;
+	    }
+	    table td {
+	    	padding: 5px 0;
+	    }
+	    table th {
+	    	padding: 8px 0;
+	    	color: white;
+	    	background: gray;
+	    	font-size: 20px;
+	    	font-weight: bold;
+	    }
+    </style>
+</head>
+
+<body>
+    <div class="mui-content">
+        <!--轮播图-->
+        <div id="slider" class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="image/sun1.jpg">
+                    </a>
+                </div>
+                <!-- 第一张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="image/sun1.jpg">
+                    </a>
+                </div>
+                <!-- 第二张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="image/sun1.jpg">
+                    </a>
+                </div>
+                <!-- 第三张 -->
+                <div class="mui-slider-item">
+                    <a href="#">
+                        <img src="image/sun1.jpg">
+                    </a>
+                </div>
+                <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+                <div class="mui-slider-item mui-slider-item-duplicate">
+                    <a href="#">
+                        <img src="image/sun1.jpg">
+                    </a>
+                </div>
+            </div>
+            <div class="mui-slider-indicator">
+                <div class="mui-indicator mui-active"></div>
+                <div class="mui-indicator"></div>
+                <div class="mui-indicator"></div>
+            </div>
+        </div>
+        <!--正文内容-->
+        <div class="ocontent">
+            <!--商品栏-->
+            <div class="otop">
+                <section id="name">SUNSHINE 运动休闲短裤</section>
+                <section>￥<span id="price">298</span></section>
+                <p>状态 热销中</p>
+                <div class="ocolor">
+                	<p>颜色</p>
+                	<span class="active"></span>
+                </div>
+                <div class="osize">
+                	<p>尺码</p>
+                	<span class="active">S</span>
+                	<span>M</span>
+                	<span>L</span>
+                	<span>XL</span>
+                	<span>XXL</span>
+                </div>
+            </div>
+            <!--商品详情-->
+            <div class="obody">
+                <section>
+                    <div class="oleft">
+                        <p>数量</p>
+                        <div class="mui-numbox">
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" value="1" id="num"/>
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                    <div class="oleft">
+                        <button type="button" class="mui-btn mui-btn-warning" id="shopcar">加入购物车</button>
+                    </div>
+                </section>
+                <ul class="olis">
+                    <li>图片详情</li>
+                    <li>规格参数</li>
+                    <li>商品评价</li>
+                </ul>
+                <table border="1">
+                	<tr>
+                		<th colspan="6">男装POLO尺码表（宽身版）</th>                		
+                	</tr>
+                	<tr>
+                		<td>单位：厘米</td>
+                		<td>S</td>
+                		<td>M</td>
+                		<td>L</td>
+                		<td>XL</td>
+                		<td>XXL</td>
+                	</tr>
+                	<tr>
+                		<td>腰围</td>
+                		<td>70</td>
+                		<td>73</td>
+                		<td>76</td>
+                		<td>79</td>
+                		<td>82</td>
+                	</tr>
+                	<tr>
+                		<td>坐围</td>
+                		<td>48</td>
+                		<td>50</td>
+                		<td>52</td>
+                		<td>54</td>
+                		<td>56</td>
+                	</tr>
+                	<tr>
+                		<td>裤长</td>
+                		<td>50</td>
+                		<td>51</td>
+                		<td>52</td>
+                		<td>53</td>
+                		<td>54</td>
+                	</tr>
+                	<tr>
+                		<td>脚围</td>
+                		<td>24</td>
+                		<td>25</td>
+                		<td>26</td>
+                		<td>27</td>
+                		<td>28</td>
+                	</tr>
+                	<tr>
+                		<td>前浪</td>
+                		<td>30</td>
+                		<td>30.5</td>
+                		<td>31</td>
+                		<td>31.5</td>
+                		<td>32</td>
+                	</tr>
+                	<tr>
+                		<td>后浪</td>
+                		<td>37</td>
+                		<td>37.</td>
+                		<td>38</td>
+                		<td>38.5</td>
+                		<td>39</td>
+                	</tr>
+                </table>
+                <p><img src="image/sun2.jpg" alt="" /></p>
+                <p><img src="image/sun3.jpg" alt="" /></p>
+                <p><img src="image/sun4.jpg" alt="" /></p>
+                <p><img src="image/sun5.jpg" alt="" /></p>
+                <p><img src="image/sun6.jpg" alt="" /></p>
+                <p><img src="image/sun7.jpg" alt="" /></p>
+                <p><img src="image/sun8.jpg" alt="" /></p>
+                <p><img src="image/sun9.jpg" alt="" /></p>
+                <p><img src="image/sun10.jpg" alt="" /></p>
+            </div>
+        </div>
+        <div id="topBtn" style="width: 20px;height: 20px;background: white;position: fixed;bottom: 50px;right: 50px;">top</div>
+    </div>
+</body>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script src="js/mui.min.js"></script>
+<script type="text/javascript">
+// 数据写入===============================================================
+// 先获取当前已保存的数据(全部商品保存在key(item)中)
+$("#shopcar").on("click", funsunion() {
+    var items = localStorage.getItem("item") ? localStorage.getItem("item") : "";
+    var item = {
+        "name": "",
+        "price": "",
+        "num": "",
+        "img": "",
+        "size": false
+    };
+    // 采集数据
+    item.name = $("#name").html();
+    item.price = parseInt($("#price").html());
+    item.num = $("#num").val();
+    item.img = $("img").eq(0).attr("src");
+    if ($("#size")) {
+        item.size = $("#size").html()
+    }
+    // 存储本次json数据的字符串
+    var itemstr = JSON.stringify(item);
+    // 用**来隔开各个数据
+    localStorage.setItem("item", items + itemstr + "**");
+    shopNumFn();
+});
+
+// 模拟点击加入购物车函数,供父页面调用
+function clickShopcarFn(){
+	$("#shopcar")[0].click()
+}
+
+//读取商品数量，并写入本地储存的函数.
+function shopNumFn(){;
+	var arr = localStorage.getItem("item").split("**");
+	var num = 0;
+    // 遍历各商品数据列表.
+    for (var i = 0; i < arr.length - 1; i++) {
+    	var data = JSON.parse(arr[i]);
+    	num+=parseInt(data.num);
+    }
+    localStorage.setItem("shopNum",num);
+}
+
+// 数据读取===============================================================
+// storage事件:HTML5的本地存储,还提供了一个storage事件,可以对键值对的改变进行监听.
+// 使用方法如下(兼容写法):
+// if (window.addEventListener) {
+//     window.addEventListener("storage", handle_storage, false);
+// } else if (window.attachEvent) {
+//     window.attachEvent("onstorage", handle_storage);
+// }
+// //处理事件
+// function handle_storage(e) {
+//     if (!e) {e = window.event}
+// 	   function here.
+// }
+
+$("#topBtn").on("tap", function() {
+    $("body,html").animate({
+        "scrollTop": 0
+    });
+})
+</script>
+
+</html>

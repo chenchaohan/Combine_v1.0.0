@@ -1,0 +1,22 @@
+1.index.html为首页
+  index_classify.html为一级分类框架
+  index_shoppingcar.html为购物车框架
+
+2.list为首页中的内嵌内容、
+  list_classify为一级分类页面、
+  list_second为二级分类列表页面、
+  list_insideOne为某一类品的商品列表页面、	
+  list_shoppingcar为购物车内容页
+
+3.details为商品详情架构页面
+  list_details为商品详情内嵌页面
+
+4.register为登陆注册页面
+
+5.myCount.html是我的账户页
+
+6.feedback.html为反馈页
+
+7.uploading.html为图片上传页面（在手机端可以拍照,并替换对应图片）
+
+notic：各文件的的CSS、js文件与html文件同名

@@ -1,0 +1,22 @@
+body,
+html {
+	width: 100%;
+	margin: 0 auto;
+}
+
+#header {
+	width: 100%;
+}
+
+#ocontent {
+	width: 100%;
+}
+
+#ocontent .contentTop {
+	width: 100%;
+	margin: 0;
+}
+
+#ocontent .contentTop ul {
+	width: 58%;
+}
